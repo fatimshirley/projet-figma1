@@ -1,0 +1,208 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+  background-color: white;
+  font-family: sans-serif;
+}
+
+/* nav = logo + menu */
+nav {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, menu à droite */
+  align-items: center;
+  padding: 0% 30px; /* espace autour du contenu */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* header blanc semi-transparent */
+}
+
+/* Logo */
+.logo h3 {
+  font-style: italic;
+  color: #800020;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Menu */
+.navbar {
+  display: flex; /* aligne les items sur une ligne */
+  list-style: none;
+  gap: 20px; /* espace entre les menus */
+  padding-right: 90px;
+  padding-left: 40px;
+}
+
+.navbar li a {
+  color: #d4a017;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.hero {
+  border: 1px solid #800020;
+  border-radius: 1px;
+}
+
+
+/* --- TITRES --- */
+div h3 {
+  text-align: center;
+  color: #800020;
+  margin: 40px 0 20px 0; /* espace au-dessus et en dessous */
+  font-size: 28px;
+    padding: 50px;
+}
+
+.cadre {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+}
+
+.cadre img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cadre img:hover {
+  transform: scale(1.03);
+}
+
+/* --- SECTION SANTÉ --- */
+.sante {
+  text-align: center;
+  padding: 40px 10%;
+  background-color: #fff;
+}
+
+.sante p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cadr {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto 80px auto;
+  padding: 40px;
+  border: 2px solid #800020;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Bloc parent */
+.cad-container {
+  display: flex;
+  flex-direction: row;      /* force horizontal */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;        /* empêche retour à la ligne */
+  width: 100%;
+  margin: 40px auto;
+}
+
+/* Chaque cadre */
+.cad {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #800020;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  flex-shrink: 0;           /* empêche réduction */
+}
+
+.cadr p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #800020;
+  color: white;
+  padding: 40px 30px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* espace entre les 3 blocs */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap; /* responsive */
+}
+
+/* Chaque bloc */
+.footer-links,
+.footer-contacts,
+.footer-socials {
+  width: 30%;
+}
+
+/* Liens */
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contacts */
+.footer-contacts i {
+  display: block;
+  margin-bottom: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Réseaux sociaux */
+.footer-socials a {
+  color: white;
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+/* Copyright */
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}

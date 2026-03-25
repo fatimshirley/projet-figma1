@@ -1,0 +1,214 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+  background-color: white;
+  font-family: sans-serif;
+}
+
+/* nav = logo + menu */
+nav {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, menu à droite */
+  align-items: center;
+  padding: 0% 30px; /* espace autour du contenu */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* header blanc semi-transparent */
+}
+
+/* Logo */
+.logo h3 {
+  font-style: italic;
+  color: #800020;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Menu */
+.navbar {
+  display: flex; /* aligne les items sur une ligne */
+  list-style: none;
+  gap: 20px; /* espace entre les menus */
+  padding-right: 90px;
+  padding-left: 40px;
+}
+
+.navbar li a {
+  color: #d4a017;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/* Image plein écran */
+.hero-img {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* empêche les débordements horizontaux */
+  position: relative;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Titre "A PROPOS" centré */
+div h3 {
+  text-align: center;
+  color: #800020;
+  margin: 40px 0 20px 0; /* espace au-dessus et en dessous */
+  font-size: 28px;
+}
+
+/* Rectangle blanc avec ombre */
+.ombre {
+  background-color: white;
+  padding: 30px 40px; /* espace autour du texte */
+  max-width: 1000px;
+  margin: 0 auto 50px auto; /* centre horizontalement et espace sous le rectangle */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* ombre portée */
+  border-radius: 12px;
+  text-align: justify; /* texte justifié pour lecture plus agréable */
+}
+
+/* Paragraphes à l'intérieur du rectangle */
+.ombre p {
+  color: #333;
+  line-height: 1.6; /* espace entre les lignes pour lisibilité */
+  font-size: 16px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    gap: 10px;
+  }
+
+  .ombre {
+    padding: 20px 15px;
+  }
+
+  div h3 {
+    font-size: 24px;
+  }
+
+  .ombre p {
+    font-size: 14px;
+  }
+}
+
+.chiffre {
+  display: flex; /* aligne les icônes sur la même ligne */
+  justify-content: center; /* centre le groupe */
+  gap: 50px; /* espace entre chaque icône */
+  margin: 50px 0;
+}
+
+.icone {
+  display: flex;
+  flex-direction: column; /* texte sous l'icône */
+  align-items: center;
+  text-align: center;
+  cursor: pointer; /* effet au survol */
+}
+
+.icone i {
+  font-size: 50px; /* taille des icônes */
+  color: #800020;
+  margin-bottom: 10px; /* espace entre icône et légende */
+  transition:
+    transform 0.3s,
+    color 0.3s;
+}
+
+.icone i:hover {
+  transform: scale(1.2);
+  color: #d4a017;
+}
+
+.icone p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #800020;
+  color: white;
+  padding: 40px 30px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* espace entre les 3 blocs */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap; /* responsive */
+}
+
+/* Chaque bloc */
+.footer-links,
+.footer-contacts,
+.footer-socials {
+  width: 30%;
+}
+
+/* Liens */
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contacts */
+.footer-contacts i {
+  display: block;
+  margin-bottom: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Réseaux sociaux */
+.footer-socials a {
+  color: white;
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+/* Copyright */
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
