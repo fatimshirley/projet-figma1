@@ -65,15 +65,16 @@ div h3 {
   color: #800020;
   margin: 40px 0 20px 0; /* espace au-dessus et en dessous */
   font-size: 28px;
-    padding: 50px;
+  padding: 50px;
 }
+
 .cadre {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   width: 80%;
   margin: 0 auto 20px auto;
-  padding: 50px;
+  padding: 20px;
 }
 
 .cadre img {
@@ -87,6 +88,62 @@ div h3 {
 
 .cadre img:hover {
   transform: scale(1.03);
+}
+
+/* --- SECTION SANTÉ --- */
+.sante {
+  text-align: center;
+  padding: 40px 10%;
+  background-color: #fff;
+}
+
+.sante p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cadr {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto 80px auto;
+  padding: 40px;
+  border: 2px solid #800020;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Bloc parent */
+.cad-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 40px auto;
+  margin: 40px auto;
+}
+
+/* Chaque cadre */
+.cad {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #800020;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  flex-shrink: 0; /* empêche réduction */
+}
+
+.cadr p {
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 /* --- FOOTER --- */

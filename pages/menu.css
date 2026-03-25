@@ -59,14 +59,17 @@ nav {
   border-radius: 1px;
 }
 
-
 /* --- TITRES --- */
 div h3 {
   text-align: center;
   color: #800020;
   margin: 40px 0 20px 0; /* espace au-dessus et en dessous */
   font-size: 28px;
-    padding: 50px;
+  padding: 50px;
+}
+
+div h2 {
+  text-align: center;
 }
 
 .cadre {
@@ -120,12 +123,13 @@ div h3 {
 /* Bloc parent */
 .cad-container {
   display: flex;
-  flex-direction: row;      /* force horizontal */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: nowrap;        /* empêche retour à la ligne */
+  flex-wrap: nowrap;
   width: 100%;
+  margin: 40px auto;
   margin: 40px auto;
 }
 
@@ -138,7 +142,7 @@ div h3 {
   background-color: #fff;
   text-align: center;
   padding: 20px;
-  flex-shrink: 0;           /* empêche réduction */
+  flex-shrink: 0; /* empêche réduction */
 }
 
 .cadr p {
