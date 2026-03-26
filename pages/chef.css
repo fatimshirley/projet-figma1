@@ -233,88 +233,95 @@ footer {
 
 
 
+/* ============================================================
+   RESPONSIVE DESIGN - PAGE AIDE
+   ============================================================ */
 
-/* --- Responsive --- */
+/* --- Tablettes (max 1024px) --- */
 @media screen and (max-width: 1024px) {
-  .chef-container {
-    justify-content: center;
-    gap: 20px;
+  .faq {
+    padding: 50px 5%; /* On donne plus de place au texte */
   }
-
-  .chef-card {
-    width: 45%; /* deux cartes par ligne */
-  }
-
-  nav {
-    padding: 10px 20px;
-  }
-
+  
   .navbar {
+    padding-right: 0;
     gap: 15px;
-    padding-right: 20px;
-    padding-left: 10px;
-    flex-wrap: wrap;
-  }
-
-  .logo h3 {
-    font-size: 18px;
-  }
-
-  .chef h1 {
-    font-size: 28px;
-  }
-
-  .chef p {
-    font-size: 15px;
   }
 }
 
+/* --- Smartphones Large (max 768px) --- */
 @media screen and (max-width: 768px) {
-  .chef-container {
+  /* Navigation mobile */
+  nav {
+    flex-direction: column;
+    padding: 20px 10px;
     gap: 15px;
   }
 
-  .chef-card {
-    width: 100%; /* une carte par ligne */
+  .navbar {
+    padding-left: 0;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* Évite que les liens sortent de l'écran */
   }
 
-  .chef h1 {
-    font-size: 24px;
+  /* Section Aide & FAQ */
+  .help-hero {
+    padding: 60px 20px;
   }
 
-  .chef p {
+  .help-hero h1 {
+    font-size: 26px;
+  }
+
+  .faq-item {
+    padding: 15px 5px; /* Réduit l'espace interne sur mobile */
+  }
+
+  /* Footer : Alignement vertical et centré */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .footer-links, .footer-contacts, .footer-socials {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Aligne l'icône et le texte au milieu */
+  }
+  
+  .footer-contacts h3 {
+    width: 100%; /* Permet au titre de se centrer par rapport au bloc */
+  }
+}
+
+/* --- Très petits écrans (max 480px) --- */
+@media screen and (max-width: 480px) {
+  .help-hero h1 {
+    font-size: 22px;
+  }
+
+  .help-hero p {
     font-size: 14px;
   }
 
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .chef h1 {
-    font-size: 20px;
-  }
-
-  .chef p {
-    font-size: 13px;
-  }
-
-  .chef-card p {
-    font-size: 13px;
-  }
-
-  .chef-card span {
-    padding: 6px 12px;
-    font-size: 12px;
+  /* Bouton contact : Pleine largeur pour le pouce */
+  .btn-contact {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
   }
 
   .navbar li a {
     font-size: 14px;
   }
 
-  .logo h3 {
-    font-size: 16px;
+  .faq-item h3 {
+    font-size: 17px;
   }
 }

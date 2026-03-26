@@ -298,8 +298,113 @@ footer {
   font-weight: normal;
 }
 
+/* ============================================================
+   RESPONSIVE DESIGN (REVISITÉ & ÉLÉGANT)
+   ============================================================ */
 
+/* --- TABLETTES (Moins de 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .grid-moods {
+    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+    padding: 20px;
+  }
+}
 
+/* --- MOBILES LARGES & TABLETTES PORTRAIT (Moins de 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Navigation : On empile les éléments pour plus de clarté */
+  nav {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .navbar {
+    padding: 15px 0 0 0;
+    gap: 15px;
+    justify-content: center; /* Centre les liens sur mobile */
+  }
+
+  /* Section Hero : On réduit l'espace pour éviter trop de scroll */
+  .search-hero {
+    padding: 50px 15px;
+  }
+
+  .search-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Footer : On centre tout proprement */
+  .footer-container {
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement les blocs */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-links, .footer-contacts, .footer-socials {
+    width: 100%;
+    max-width: 300px; /* Évite que les lignes soient trop longues */
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Aligne l'icône et le texte au milieu */
+  }
+}
+
+/* --- PETITS SMARTPHONES (Moins de 480px) --- */
+@media screen and (max-width: 480px) {
+  /* Grille : 1 seule carte par ligne */
+  .grid-moods {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  /* Barre de recherche : On transforme le design pour le tactile */
+  .search-box {
+    flex-direction: column;
+    background: transparent; /* On enlève le fond blanc du conteneur */
+    box-shadow: none;
+    gap: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px; /* On redonne la forme arrondie à l'input seul */
+    background: white;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  .search-box button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .search-box i {
+    display: none; /* On cache la loupe pour gagner de la place sur mini-écran */
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+  }
+}
+
+/* --- FIXES UTILES --- */
+
+/* Assure que les images du site ne dépassent jamais de l'écran */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Empêche le texte des cartes de coller aux bords */
+.mood-card p {
+  padding: 0 10px;
+}
 
 
 

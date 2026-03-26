@@ -223,59 +223,133 @@ footer {
   font-size: 16px;
   font-weight: normal;
 }
+/* ============================================================
+   RESPONSIVE DESIGN GLOBAL (OPTIMISÉ TOUS ÉCRANS)
+   ============================================================ */
 
-
-/* ===== RESPONSIVE ===== */
-
-/* Pour les grands écrans moyens/tablettes */
-@media screen and (max-width: 1200px) {
-  .cadre {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .cad-container {
-    flex-wrap: wrap;
+/* --- 1. Écrans Moyens & Tablettes (max 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding-right: 20px;
+    padding-left: 20px;
     gap: 15px;
   }
-  .budget-card, .gourmand-card, .recette-card, .chef-card {
-    width: 45%;
-  }
-}
 
-/* Pour les tablettes et petits écrans */
-@media screen and (max-width: 992px) {
   .cadre {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .budget-card, .gourmand-card, .recette-card, .chef-card {
-    width: 48%;
-  }
-  .navbar {
-    gap: 10px;
-    padding-right: 20px;
-    padding-left: 10px;
-  }
-}
-
-/* Pour les mobiles */
-@media screen and (max-width: 768px) {
-  .cadre {
-    grid-template-columns: 1fr;
-  }
-  .cad-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .budget-card, .gourmand-card, .recette-card, .chef-card {
+    grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
     width: 90%;
   }
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+
+  .cad-container {
+    flex-wrap: wrap; /* Permet aux petits cadres de passer à la ligne */
+    justify-content: center;
+    gap: 15px;
   }
+}
+
+/* --- 2. Smartphones Larges & Tablettes Portrait (max 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Navigation : On empile pour éviter les chevauchements */
+  nav {
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+  }
+
+  .navbar {
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* Section Santé & Galerie */
+  div h3 {
+    font-size: 24px;
+    padding: 30px 10px;
+    margin: 20px 0;
+  }
+
+  .cadre {
+    grid-template-columns: repeat(2, 1fr); /* 2 images par ligne */
+    gap: 10px;
+  }
+
+  .sante p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .cadr {
+    width: 95%;
+    padding: 25px 15px;
+    margin-bottom: 40px;
+  }
+
+  /* Footer : On centre tout proprement */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
   .footer-links, .footer-contacts, .footer-socials {
     width: 100%;
-    margin-bottom: 20px;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Aligne l'icône et le texte au centre */
+  }
+}
+
+/* --- 3. Petits Smartphones (max 480px) --- */
+@media screen and (max-width: 480px) {
+  .logo h3 {
+    font-size: 18px;
+  }
+
+  .navbar li a {
+    font-size: 14px;
+  }
+
+  .cadre {
+    grid-template-columns: 1fr; /* 1 seule image par ligne pour la visibilité */
+    width: 85%;
+  }
+
+  .cadre img {
+    height: 150px; /* On augmente un peu la hauteur pour les détails */
+  }
+
+  .cad-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Les petits cadres 2 par 2 */
+    gap: 10px;
+  }
+
+  .cad {
+    width: 100%; /* Ils prennent toute la place de leur colonne de grille */
+    height: auto;
+    padding: 15px 5px;
+  }
+
+  .sante p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}
+
+/* --- 4. Écrans XXL (min 1440px) --- */
+@media screen and (min-width: 1440px) {
+  .cadre, .footer-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

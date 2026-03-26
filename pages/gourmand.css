@@ -228,64 +228,349 @@ footer {
 
 
 
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-/* Responsive pour écrans moyens et petits */
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+  background-color: beige;
+  font-family: sans-serif;
+}
+
+/* nav = logo + menu */
+nav {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, menu à droite */
+  align-items: center;
+  padding: 0% 30px; /* espace autour du contenu */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* header blanc semi-transparent */
+}
+
+/* Logo */
+.logo h3 {
+  font-style: italic;
+  color: #800020;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Menu */
+.navbar {
+  display: flex; /* aligne les items sur une ligne */
+  list-style: none;
+  gap: 20px; /* espace entre les menus */
+  padding-right: 90px;
+  padding-left: 40px;
+}
+
+.navbar li a {
+  color: #d4a017;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+
+/* --- SECTION GOURMANDE --- */
+.gourmand {
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.gourmand h1 {
+  color: #800020;
+  margin-bottom: 10px;
+}
+
+.gourmand p {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.gourmand-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.gourmand-card {
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding-bottom: 20px;
+  transition: 0.3s;
+}
+
+.gourmand-card:hover {
+  transform: translateY(-5px);
+}
+
+.gourmand-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gourmand-card h3 {
+  color: #800020;
+  margin: 15px 0 10px;
+}
+
+.gourmand-card p {
+  padding: 0 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.gourmand-card span {
+  display: inline-block;
+  margin-top: 15px;
+  background: #d4a017;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+/* Footer global */
+footer {
+  background-color: #800020;
+  color: white;
+  padding: 40px 30px 20px;
+}
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Chaque bloc */
+.footer-links,
+.footer-contacts,
+.footer-socials {
+  width: 30%;
+  text-align: center; /* centre les h3 */
+}
+
+/* Liens */
+.footer-links h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none; /* supprime les puces */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* Contacts */
+.footer-contacts h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+  width: 50%; /* occupe toute la largeur du bloc */
+  text-align: center;
+}
+
+.footer-contacts p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: normal;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  justify-content: flex-start; /* reste en colonne verticale */
+  flex-direction: row; /* icône et texte sur la même ligne */
+}
+
+.footer-contacts p i {
+  width: 25px; /* fixe la largeur pour aligner le texte */
+  text-align: center;
+}
+
+/* Réseaux sociaux */
+.footer-socials h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-socials a {
+  font-size: 24px;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+}
+
+/* Copyright */
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+/* ============================================================
+   RESPONSIVE DESIGN GLOBAL (OPTIMISÉ TOUS ÉCRANS)
+   ============================================================ */
+
+/* --- 1. Écrans Moyens & Tablettes (max 1024px) --- */
 @media screen and (max-width: 1024px) {
+  .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    gap: 15px;
+  }
+
   .gourmand-container {
-    gap: 20px;
+    gap: 25px;
   }
 
   .gourmand-card {
-    width: 45%; /* 2 cartes par ligne sur tablette */
-  }
-
-  nav {
-    padding: 10px 20px;
-  }
-
-  .navbar {
-    gap: 10px;
-    padding-right: 20px;
-    padding-left: 10px;
+    width: calc(50% - 25px); /* 2 cartes par ligne avec calcul précis de l'écart */
+    max-width: 350px;
   }
 }
 
+/* --- 2. Smartphones Larges & Tablettes Portrait (max 768px) --- */
 @media screen and (max-width: 768px) {
-  .gourmand-container {
+  /* Navigation : On centre tout proprement */
+  nav {
     flex-direction: column;
-    align-items: center;
+    padding: 15px 10px;
+    gap: 15px;
   }
 
-  .gourmand-card {
-    width: 90%; /* 1 carte par ligne sur mobile */
+  .navbar {
+    padding: 0;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Section Gourmande */
+  .gourmand {
+    width: 95%;
+    padding: 30px 10px;
   }
 
   .gourmand h1 {
     font-size: 24px;
   }
 
-  .gourmand p {
-    font-size: 14px;
+  .gourmand-card {
+    width: 100%; /* Une carte par ligne */
+    max-width: 400px; /* Évite que la carte ne devienne trop géante */
+  }
+
+  /* Footer : On empile les colonnes et on centre le texte */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-links, .footer-contacts, .footer-socials {
+    width: 100%;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Aligne l'icône et le texte au centre */
+  }
+  
+  .footer-contacts h3 {
+    width: 100%; /* Force le centrage du titre */
   }
 }
 
+/* --- 3. Petits Smartphones (max 480px) --- */
 @media screen and (max-width: 480px) {
+  .logo h3 {
+    font-size: 18px;
+  }
+
+  .navbar li a {
+    font-size: 14px;
+  }
+
   .gourmand h1 {
     font-size: 20px;
+  }
+
+  .gourmand p {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .gourmand-card img {
+    height: 180px; /* On réduit légèrement l'image pour gagner de la place */
+  }
+
+  .gourmand-card h3 {
+    font-size: 18px;
   }
 
   .gourmand-card p {
     font-size: 13px;
   }
 
-  .gourmand-card span {
-    padding: 6px 12px;
-    font-size: 14px;
+  .footer-copy {
+    font-size: 13px;
+    padding: 0 10px;
   }
+}
 
-  .navbar {
-    flex-direction: column;
-    gap: 8px;
-    padding: 0;
+/* --- 4. Bonus : Fix pour très grands écrans (min 1400px) --- */
+@media screen and (min-width: 1400px) {
+  .gourmand-container {
+    max-width: 1200px;
+    margin: auto;
   }
 }

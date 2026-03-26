@@ -198,47 +198,119 @@ footer {
 
 
 
+/* ============================================================
+   RECONSTRUCTION DU RESPONSIVE (TOUS ÉCRANS)
+   ============================================================ */
 
+/* 1. Ajustement global des cartes (Grid-Moods) */
+.grid-moods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
 
-/* ===== RESPONSIVE ===== */
+/* Correction pour les liens qui entourent les cartes */
+.grid-moods a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Permet à la carte de prendre toute la place du lien */
+}
 
-/* Écrans grands à moyens */
-@media screen and (max-width: 1200px) {
+/* 2. Écrans Tablettes (max 1024px) */
+@media screen and (max-width: 1024px) {
   .cadre {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
+    width: 95%;
+  }
+  
+  .navbar {
+    padding-right: 20px;
   }
 }
 
-/* Tablettes */
-@media screen and (max-width: 992px) {
-  .cadre {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 30px;
-  }
-}
-
-/* Mobiles */
+/* 3. Smartphones Large (max 768px) */
 @media screen and (max-width: 768px) {
-  .cadre {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
+  /* Navigation mobile */
   nav {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px 0;
   }
 
   .navbar {
-    flex-direction: column;
+    padding: 10px 0;
+    gap: 15px;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne si besoin */
+    justify-content: center;
+  }
+
+  /* Grille d'images */
+  .cadre {
+    grid-template-columns: repeat(2, 1fr); /* 2 images par ligne sur mobile large */
     gap: 10px;
-    padding: 0;
+    padding: 10px;
+  }
+
+  /* Titres */
+  div h3 {
+    font-size: 22px;
+    padding: 20px;
+  }
+
+  /* Footer en colonne centrée */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
   }
 
   .footer-links, .footer-contacts, .footer-socials {
     width: 100%;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Centre les icônes de contact */
+  }
+}
+
+/* 4. Très petits smartphones (max 480px) */
+@media screen and (max-width: 480px) {
+  /* La grille d'images passe à 1 seule colonne */
+  .cadre {
+    grid-template-columns: 1fr;
+  }
+
+  .search-hero h1 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  /* Ajustement de la barre de recherche */
+  .search-box {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .search-box input {
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .grid-moods {
+    grid-template-columns: 1fr; /* Une seule carte par ligne */
   }
 }

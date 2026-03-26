@@ -233,66 +233,104 @@ footer {
   font-size: 16px;
   font-weight: normal;
 }
+/* ============================================================
+   RESPONSIVE DESIGN PROFESSIONNEL (CORRIGÉ)
+   ============================================================ */
 
-
-
-/* Responsive pour écrans moyens et petits */
+/* --- TABLETTES (max 1024px) --- */
 @media screen and (max-width: 1024px) {
-  .express-container {
-    gap: 20px;
+  .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    gap: 15px;
   }
 
   .recette-card {
-    width: 45%; /* 2 cartes par ligne sur tablette */
-  }
-
-  nav {
-    padding: 10px 20px;
-  }
-
-  .navbar {
-    gap: 10px;
-    padding-right: 20px;
-    padding-left: 10px;
+    width: 45%; /* Garde 2 cartes par ligne proprement */
+    max-width: 350px;
   }
 }
 
+/* --- SMARTPHONES LARGES (max 768px) --- */
 @media screen and (max-width: 768px) {
-  .express-container {
+  /* Navigation : On centre le logo et le menu */
+  nav {
     flex-direction: column;
-    align-items: center;
+    padding: 15px 10px;
+    gap: 15px;
   }
 
-  .recette-card {
-    width: 90%; /* 1 carte par ligne sur mobile */
+  .navbar {
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Section Express */
+  .express {
+    width: 95%;
+    padding: 30px 0;
   }
 
   .express h1 {
     font-size: 24px;
   }
 
-  .express p {
-    font-size: 14px;
+  .express-container {
+    gap: 20px;
+  }
+
+  .recette-card {
+    width: 100%; /* Une seule grande carte par ligne */
+    max-width: 400px; /* Évite que la carte soit trop géante sur tablette portrait */
+  }
+
+  /* Footer : On empile les blocs */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-links, .footer-contacts, .footer-socials {
+    width: 100%;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Centre les icônes de contact */
+  }
+
+  .footer-contacts h3 {
+    width: 100%; /* Permet au titre de bien se centrer */
   }
 }
 
+/* --- PETITS MOBILES (max 480px) --- */
 @media screen and (max-width: 480px) {
+  .logo h3 {
+    font-size: 18px;
+  }
+
+  .navbar li a {
+    font-size: 14px;
+  }
+
   .express h1 {
     font-size: 20px;
   }
 
-  .recette-card p {
+  /* On réduit un peu l'image pour gagner de la place */
+  .recette-card img {
+    height: 180px;
+  }
+
+  .recette-card h3 {
+    font-size: 18px;
+  }
+
+  .footer-copy {
     font-size: 13px;
-  }
-
-  .recette-card span {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 8px;
-    padding: 0;
+    padding: 0 10px;
   }
 }

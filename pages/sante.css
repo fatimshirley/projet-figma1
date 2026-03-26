@@ -259,62 +259,138 @@ footer {
 }
 
 
+/* ============================================================
+   RESPONSIVE DESIGN GLOBAL (TOUS ÉCRANS)
+   ============================================================ */
 
-
-
-/* ===== RESPONSIVE ===== */
-
-/* Écrans grands à moyens */
+/* --- 1. Écrans larges (Laptops/Desktops classiques) --- */
 @media screen and (max-width: 1200px) {
   .cadre {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr); /* 4 images au lieu de 6 */
+    width: 90%;
+  }
+  
+  .navbar {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
-/* Tablettes */
+/* --- 2. Tablettes (iPad, Tablettes Android) --- */
 @media screen and (max-width: 992px) {
   .cadre {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
     gap: 15px;
-    padding: 30px;
+  }
+
+  .cad-container {
+    flex-wrap: wrap; /* CRITIQUE : permet aux cadres de passer à la ligne */
+    gap: 15px;
+  }
+
+  .cad {
+    width: 140px; /* On réduit légèrement la taille */
+    height: 140px;
   }
 }
 
-/* Mobiles */
+/* --- 3. Smartphones Large (Portrait) --- */
 @media screen and (max-width: 768px) {
-  .cadre {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
   nav {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
+    gap: 15px;
   }
 
   .navbar {
-    flex-direction: column;
-    gap: 10px;
     padding: 0;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  div h3 {
+    font-size: 24px;
+    padding: 25px 10px;
+  }
+
+  .cadre {
+    grid-template-columns: repeat(2, 1fr); /* 2 images par ligne */
+    width: 95%;
+  }
+
+  .sante {
+    padding: 30px 5%;
+  }
+
+  .cadr {
+    width: 95%;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Footer en mode pile */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
   }
 
   .footer-links, .footer-contacts, .footer-socials {
     width: 100%;
-    margin-bottom: 20px;
+  }
+
+  .footer-contacts p {
+    justify-content: center; /* Aligne les icônes au centre */
   }
 }
 
+/* --- 4. Petits Smartphones (iPhone SE, etc.) --- */
+@media screen and (max-width: 480px) {
+  .logo h3 {
+    font-size: 18px;
+  }
 
+  .navbar li a {
+    font-size: 14px;
+  }
 
+  .cadre {
+    grid-template-columns: 1fr; /* 1 seule image par ligne */
+  }
 
+  .cadre img {
+    height: 180px; /* On donne de la hauteur pour que l'image soit belle seule */
+  }
 
+  .cad-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Les petits cadres 2 par 2 */
+    gap: 10px;
+  }
 
+  .cad {
+    width: 100%; /* S'adapte à la grille */
+    height: auto;
+    padding: 15px 5px;
+    font-size: 14px;
+  }
 
+  .sante p {
+    font-size: 14px;
+  }
 
+  .footer-copy {
+    font-size: 13px;
+  }
+}
 
-
-
-
-
-
+/* --- 5. Très Grands Écrans (Ultra-wide) --- */
+@media screen and (min-width: 1600px) {
+  .cadre, .footer-container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

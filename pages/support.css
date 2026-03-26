@@ -51,7 +51,59 @@ body {
 .contact-support button:hover {
   background-color: #a00028;
 }
+/* ============================================================
+   RESPONSIVE DESIGN - SUPPORT (TOUT ÉCRAN)
+   ============================================================ */
 
+/* --- Tablettes (max 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .contact-support {
+    width: 85%; /* On donne un peu plus d'espace sur les côtés */
+    margin: 60px auto;
+  }
+}
+
+/* --- Smartphones Large (max 768px) --- */
+@media screen and (max-width: 768px) {
+  .contact-support {
+    width: 90%;
+    padding: 30px 20px; /* On réduit le padding interne pour gagner de la place */
+    margin: 40px auto;
+  }
+
+  .contact-support h2 {
+    font-size: 22px; /* Titre légèrement plus petit */
+    margin-bottom: 20px;
+  }
+}
+
+/* --- Très petits écrans (max 480px) --- */
+@media screen and (max-width: 480px) {
+  .contact-support {
+    width: 95%; /* On occupe presque toute la largeur pour éviter l'effet "étroit" */
+    padding: 25px 15px;
+    border-width: 1px; /* Bordure plus fine pour plus de légèreté */
+    margin: 30px auto;
+  }
+
+  .contact-support input,
+  .contact-support textarea {
+    font-size: 14px; /* Texte un peu plus petit pour les petits écrans */
+    padding: 10px;
+  }
+
+  .contact-support button {
+    padding: 15px; /* Bouton plus large pour faciliter le clic tactile */
+    font-weight: bold;
+  }
+}
+
+/* --- Fix pour les écrans ultra-larges (min 1400px) --- */
+@media screen and (min-width: 1400px) {
+  .contact-support {
+    margin: 120px auto; /* On descend un peu le formulaire pour l'équilibre visuel */
+  }
+}
 
 
 
