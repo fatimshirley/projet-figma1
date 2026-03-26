@@ -1,0 +1,339 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: beige;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo h3 {
+  color: #800020;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #d4a017;
+  font-size: 16px;
+}
+
+.navbar li a.active {
+  font-weight: bold;
+}
+
+/* HERO */
+.help-hero {
+  text-align: center;
+  background-color: #800020;
+  color: white;
+  padding: 80px 20px;
+}
+
+.help-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.help-hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* FAQ */
+.faq {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.faq h2 {
+  color: #800020;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.faq-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #d4a017;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+}
+
+.faq-item h3 {
+  color: #800020;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.faq-item p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* CONTACT RAPIDE */
+.help-contact {
+  background-color: beige;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.help-contact h2 {
+  color: #800020;
+  margin-bottom: 20px;
+}
+
+.help-contact p {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.btn-contact {
+  text-decoration: none;
+  background-color: #d4a017;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-contact:hover {
+  background-color: #b38612;
+}
+
+/* Footer global */
+footer {
+  background-color: #800020;
+  color: white;
+  padding: 40px 30px 20px;
+}
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Chaque bloc */
+.footer-links,
+.footer-contacts,
+.footer-socials {
+  width: 30%;
+  text-align: center; /* centre les h3 */
+}
+
+/* Liens */
+.footer-links h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none; /* supprime les puces */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* Contacts */
+.footer-contacts h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+  width: 50%; /* occupe toute la largeur du bloc */
+  text-align: center;
+}
+
+.footer-contacts p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: normal;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  justify-content: flex-start; /* reste en colonne verticale */
+  flex-direction: row; /* icône et texte sur la même ligne */
+}
+
+.footer-contacts p i {
+  width: 25px; /* fixe la largeur pour aligner le texte */
+  text-align: center;
+}
+
+/* Réseaux sociaux */
+.footer-socials h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-socials a {
+  font-size: 24px;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+}
+
+/* Copyright */
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Responsive --- */
+@media screen and (max-width: 1024px) {
+  .chef-container {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .chef-card {
+    width: 45%; /* deux cartes par ligne */
+  }
+
+  nav {
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    gap: 15px;
+    padding-right: 20px;
+    padding-left: 10px;
+    flex-wrap: wrap;
+  }
+
+  .logo h3 {
+    font-size: 18px;
+  }
+
+  .chef h1 {
+    font-size: 28px;
+  }
+
+  .chef p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chef-container {
+    gap: 15px;
+  }
+
+  .chef-card {
+    width: 100%; /* une carte par ligne */
+  }
+
+  .chef h1 {
+    font-size: 24px;
+  }
+
+  .chef p {
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chef h1 {
+    font-size: 20px;
+  }
+
+  .chef p {
+    font-size: 13px;
+  }
+
+  .chef-card p {
+    font-size: 13px;
+  }
+
+  .chef-card span {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .navbar li a {
+    font-size: 14px;
+  }
+
+  .logo h3 {
+    font-size: 16px;
+  }
+}

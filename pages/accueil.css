@@ -70,6 +70,31 @@ nav {
   display: block;
 }
 
+.hero2 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  height: auto;
+}
+
+.hero2 button {
+  padding: 15px 35px;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero2 button:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
 /* Titre "A PROPOS" centré */
 div h3 {
   text-align: center;
@@ -131,7 +156,6 @@ div h3 {
   flex-direction: column; /* texte sous l'icône */
   align-items: center;
   text-align: center;
-  cursor: pointer; /* effet au survol */
 }
 
 .icone i {
@@ -143,29 +167,26 @@ div h3 {
     color 0.3s;
 }
 
-.icone i:hover {
-  transform: scale(1.2);
-  color: #d4a017;
-}
-
 .icone p {
   font-size: 16px;
   font-weight: bold;
 }
 
+/* Footer global */
 footer {
   background-color: #800020;
   color: white;
   padding: 40px 30px 20px;
 }
 
+/* Footer container */
 .footer-container {
   display: flex;
-  justify-content: space-between; /* espace entre les 3 blocs */
+  justify-content: space-between;
   align-items: flex-start;
   max-width: 1200px;
   margin: auto;
-  flex-wrap: wrap; /* responsive */
+  flex-wrap: wrap;
 }
 
 /* Chaque bloc */
@@ -173,42 +194,204 @@ footer {
 .footer-contacts,
 .footer-socials {
   width: 30%;
+  text-align: center; /* centre les h3 */
 }
 
 /* Liens */
-.footer-links {
-  list-style: none;
+.footer-links h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none; /* supprime les puces */
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-links li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 /* Contacts */
-.footer-contacts i {
-  display: block;
-  margin-bottom: 24px;
-  text-decoration: none;
-  font-weight: bold;
+.footer-contacts h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 18px;
+  width: 50%; /* occupe toute la largeur du bloc */
+  text-align: center;
+}
+
+.footer-contacts p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: normal;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  justify-content: flex-start; /* reste en colonne verticale */
+  flex-direction: row; /* icône et texte sur la même ligne */
+}
+
+.footer-contacts p i {
+  width: 25px; /* fixe la largeur pour aligner le texte */
+  text-align: center;
 }
 
 /* Réseaux sociaux */
-.footer-socials a {
+.footer-socials h3 {
   color: white;
-  font-size: 22px;
-  margin-right: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-socials a {
+  font-size: 24px;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
 }
 
 /* Copyright */
 .footer-copy {
-  width: 100%;
   text-align: center;
   margin-top: 30px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+
+
+
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablettes / petits PC */
+@media screen and (max-width: 1024px) {
+  .hero-img img {
+    height: auto;
+  }
+
+  .hero2 {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .chiffre {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .icone {
+    flex: 1 1 200px; /* permet aux icônes de passer sur plusieurs lignes */
+  }
+
+  footer .footer-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-links,
+  .footer-contacts,
+  .footer-socials {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+}
+
+/* Smartphones / écrans étroits */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .hero2 button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  div h3 {
+    font-size: 24px;
+  }
+
+  .ombre {
+    padding: 20px;
+  }
+
+  .chiffre {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .icone {
+    flex: 1 1 100%;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links,
+  .footer-contacts,
+  .footer-socials {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-socials p {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+  .hero2 button {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .ombre p {
+    font-size: 14px;
+  }
+
+  .chiffre {
+    gap: 15px;
+  }
+
+  .icone i {
+    font-size: 35px;
+  }
+
+  .footer-copy {
+    font-size: 14px;
+  }
 }
