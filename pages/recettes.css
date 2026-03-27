@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   padding: 0;
   margin: 0;
@@ -13,7 +13,7 @@ body {
   font-family: sans-serif;
 }
 
-/* nav = logo + menu */
+
 nav {
   display: flex;
   justify-content: space-between; /* logo à gauche, menu à droite */
@@ -30,7 +30,7 @@ nav {
   ); /* header blanc semi-transparent */
 }
 
-/* Logo */
+
 .logo h3 {
   font-style: italic;
   color: #800020;
@@ -39,7 +39,7 @@ nav {
   padding: 10px;
 }
 
-/* Menu */
+
 .navbar {
   display: flex; /* aligne les items sur une ligne */
   list-style: none;
@@ -56,19 +56,17 @@ nav {
 }
 
 
-/* --- TITRES --- */
 div h3 {
   text-align: center;
   color: #800020;
   margin: 40px 0 20px 0; /* espace au-dessus et en dessous */
   font-size: 28px;
-    padding: 50px;
+  padding: 50px;
 }
 
 div h2 {
   text-align: center;
 }
-
 
 .cadre {
   display: grid;
@@ -92,14 +90,13 @@ div h2 {
   transform: scale(1.03);
 }
 
-/* Footer global */
 footer {
   background-color: #800020;
   color: white;
-  padding: 40px 30px 20px;
+  padding: 10px;
 }
 
-/* Footer container */
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -109,15 +106,14 @@ footer {
   flex-wrap: wrap;
 }
 
-/* Chaque bloc */
 .footer-links,
 .footer-contacts,
 .footer-socials {
   width: 30%;
-  text-align: center; /* centre les h3 */
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-/* Liens */
 .footer-links h3 {
   color: white;
   margin-bottom: 15px;
@@ -141,7 +137,6 @@ footer {
   font-size: 16px;
 }
 
-/* Contacts */
 .footer-contacts h3 {
   color: white;
   margin-bottom: 15px;
@@ -168,7 +163,7 @@ footer {
   text-align: center;
 }
 
-/* Réseaux sociaux */
+
 .footer-socials h3 {
   color: white;
   margin-bottom: 15px;
@@ -188,7 +183,6 @@ footer {
   transform: scale(1.2);
 }
 
-/* Copyright */
 .footer-copy {
   text-align: center;
   margin-top: 30px;
@@ -196,13 +190,6 @@ footer {
   font-weight: normal;
 }
 
-
-
-/* ============================================================
-   RECONSTRUCTION DU RESPONSIVE (TOUS ÉCRANS)
-   ============================================================ */
-
-/* 1. Ajustement global des cartes (Grid-Moods) */
 .grid-moods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -212,7 +199,7 @@ footer {
   margin: 40px auto;
 }
 
-/* Correction pour les liens qui entourent les cartes */
+
 .grid-moods a {
   text-decoration: none;
   color: inherit;
@@ -225,7 +212,7 @@ footer {
     grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
     width: 95%;
   }
-  
+
   .navbar {
     padding-right: 20px;
   }
@@ -248,18 +235,21 @@ footer {
 
   /* Grille d'images */
   .cadre {
-    grid-template-columns: repeat(2, 1fr); /* 2 images par ligne sur mobile large */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 images par ligne sur mobile large */
     gap: 10px;
     padding: 10px;
   }
 
-  /* Titres */
+ 
   div h3 {
     font-size: 22px;
     padding: 20px;
   }
 
-  /* Footer en colonne centrée */
+
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -267,7 +257,9 @@ footer {
     gap: 40px;
   }
 
-  .footer-links, .footer-contacts, .footer-socials {
+  .footer-links,
+  .footer-contacts,
+  .footer-socials {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -291,7 +283,7 @@ footer {
     padding: 0 10px;
   }
 
-  /* Ajustement de la barre de recherche */
+
   .search-box {
     width: 95%;
     display: flex;

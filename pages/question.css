@@ -401,7 +401,7 @@ img {
   height: auto;
 }
 
-/* Empêche le texte des cartes de coller aux bords */
+
 .mood-card p {
   padding: 0 10px;
 }
